@@ -9,7 +9,7 @@ import pymongo
 
 
 
-#myclient=pymongo.MongoClient("mongodb://localhost:27017")                  #Yerel Server bağlantısı ve işlemleri için 
+#myclient=pymongo.MongoClient("")                                           #Yerel Server bağlantısı ve işlemleri için 
 
 mydb=myclient["node-app"]                                                   #node-app isminde bir collection arar, bulamazsa oluşturur
 
