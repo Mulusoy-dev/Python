@@ -5,7 +5,7 @@ import pymongo
 
 
 
-myclient=pymongo.MongoClient("mongodb+srv://melih:ccsqkZ79nvQbKHma@cluster0.tokxl.mongodb.net/node-app?retryWrites=true&w=majority")
+#myclient=pymongo.MongoClient()   
 
 
 
