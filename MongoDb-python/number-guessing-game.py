@@ -18,9 +18,9 @@ info_diff=input("Choose a difficulty. Type 'easy' or 'hard': ")
 attempts_hard=5
 attempts_easy=10
 
+
+
 attempt_flag=True
-
-
 
 
 while attempt_flag:
@@ -36,7 +36,7 @@ while attempt_flag:
         attempt_flag=False
         break
       print("Guess again")
-      #print(f"You have {attempts_hard} attempts remaining to guess the number.")
+      
     elif guess_num < random_number:
       attempts_hard-=1 
       print("Too low")
@@ -45,7 +45,7 @@ while attempt_flag:
         attempt_flag=False
         break
       print("Guess again")
-      #print(f"You have {attempts_hard} attempts remaining to guess the number.")
+      
     else:
       print(f"You got it! The answer was {guess_num}")
       attempt_flag=False
