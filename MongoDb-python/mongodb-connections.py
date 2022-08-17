@@ -4,8 +4,7 @@ import pymongo
 
 
 
-
-#myclient=pymongo.MongoClient()   
+myclient=pymongo.MongoClient()   
 
 
 

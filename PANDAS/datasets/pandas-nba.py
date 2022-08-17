@@ -1,4 +1,3 @@
-from typing import KeysView
 import pandas as pd
 
 # 1)
@@ -66,6 +65,7 @@ import pandas as pd
 #  dtype: int64
 
 
+
 # Kural: pd.Series([data],[index])
 # print(pd.Series([15,16,17,18],["A","B","C","D"]))
 # A    15     
@@ -73,14 +73,4 @@ import pandas as pd
 # C    17     
 # D    18     
 # dtype: int64
-
-
-
-# DataFrame: Serilerin birleştirilmesi ile oluşur.
-
-
-
-
-
-
 
