@@ -2,6 +2,8 @@ import pandas as pd
 
 # Dosyada hakkındaki bilgiler
 df = pd.read_csv("C:/Users/melih/Desktop/Python/PANDAS/datasets/IMDBdata_MainData_poster_refresh.csv")
+# info_data=df.info
+# print(info_data)
 
 
 # İlk 5 kaydı gösterin
@@ -38,7 +40,7 @@ select_data=df.loc[5:9,["title","rated"]]
 
 
 # Sadece title ve rated sütununu içeren ve imdb puanı 'PG-13' olan kayıtlardan ilk 50 tanesini alın.
-#filter = df[df["rated"] == "PG-13"][["title","rated"]].head(50)
+filter = df[df["rated"] == "PG-13"][["title","rated"]].head(50)
 #final_list=filter[["title","rated"]]
 
 
@@ -46,7 +48,6 @@ select_data=df.loc[5:9,["title","rated"]]
 filter = df.query("year >= 2014 & year <= 2015")["title"]
 
 
-print(df)
-print(filter)
-
-#print(select_data)
+#print(df)
+#print(filter)
+print(select_data)
