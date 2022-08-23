@@ -16,7 +16,7 @@ File = win32com.client.Dispatch("Excel.Application")
 
 # Belirlenen Excel'i açma
 Workbook = File.Workbooks.open("C:/Users/melih/Desktop/exchange.xlsx")
-Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/borsa.xlsx")
+Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 
 # def dateExcel(path):
@@ -55,12 +55,12 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/borsa.xlsx")
 while True:
     
     df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
-    df2 = pd.read_excel("C:/Users/melih/Desktop/borsa.xlsx")
+    df2 = pd.read_excel("C:/Users/melih/Desktop/gold.xlsx")
     print(df)
     print(df2)
+    print("----------------------------------------------------")
     # dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
     time.sleep(45)
     Workbook.Save()
-    print("------------------------------------")
+    Workbook2.Save()
     
-
