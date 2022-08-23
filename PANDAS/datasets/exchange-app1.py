@@ -54,7 +54,7 @@ def dateExcel(path):
 
 while True:
     
-    df = dataFrame = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
+    df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
     print(df)
     dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
     time.sleep(45)
