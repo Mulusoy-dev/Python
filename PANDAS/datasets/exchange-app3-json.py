@@ -52,6 +52,14 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 
 
+
+#### Neden json formatına ihtiyaç var?
+# MongoDb yalnızca JSON, CSV ve TSV dosyalarını destekler
+
+
+
+
+
 while True:
     
     df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
