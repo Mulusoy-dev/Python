@@ -62,7 +62,7 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 
 
-#### NOT: MongoDb server kısmını ifade eder. (Mongodb server tabanlı bir veri tabanıdır.)
+#### NOT: MongoDb, server kısmını ifade eder. (Mongodb server tabanlı bir veri tabanıdır.)
 
 
 
