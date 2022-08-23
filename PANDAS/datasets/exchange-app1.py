@@ -57,8 +57,10 @@ while True:
     df = dataFrame = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
     print(df)
     Workbook.Save()
-    #dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
-    time.sleep(30)
+    time.sleep(45)
+    # dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
+    
+    
 
 # user_select = df["Satış"]
 # print(user_select)
