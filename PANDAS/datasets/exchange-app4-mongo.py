@@ -8,8 +8,6 @@ import datetime
 ########        ilk dinamik değişen excel uygulaması - Pandas 
 
 
-
-
 # win32com kullanarak Excel yazılımını açma
 File = win32com.client.Dispatch("Excel.Application") 
 
@@ -52,26 +50,9 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 
 
-
-
-
-
-
-
 #### Neden json formatına ihtiyaç var?   MongoDb yalnızca JSON, CSV ve TSV dosyalarını destekler. 
 
-
-
 #### NOT: MongoDb, server kısmını ifade eder. (Mongodb server tabanlı bir veri tabanıdır.)
-
-
-
-
-
-
-
-
-
 
 
 
