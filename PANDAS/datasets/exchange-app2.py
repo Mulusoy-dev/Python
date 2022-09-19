@@ -1,13 +1,11 @@
+
 import pandas as pd
-import time
+import datetime
 import os
 import win32com.client
-import datetime
-
+import time
 
 ########        ilk dinamik değişen excel uygulaması - Pandas 
-
-
 
 
 # win32com kullanarak Excel yazılımını açma
@@ -19,26 +17,26 @@ Workbook = File.Workbooks.open("C:/Users/melih/Desktop/exchange.xlsx")
 Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 
-# def dateExcel(path):
-#     # os stat bilgileri 
-#     excel_status = os.stat(path)
-#     # print(excel_status)
+def dateExcel(path):
+    # os stat bilgileri 
+    excel_status = os.stat(path)
+    # print(excel_status)
 
 
-#     fileSize = (excel_status.st_size/1024)                                                 # Dosya Boyutu (Kb)
-#     print(f'File Size: {fileSize} Kb')
+    fileSize = (excel_status.st_size/1024)                                                 # Dosya Boyutu (Kb)
+    print(f'File Size: {fileSize} Kb')
 
 
-#     create_file_date=datetime.datetime.fromtimestamp(excel_status.st_ctime)                # Dosya oluşturulma tarihi
-#     print(f'File creation date: {create_file_date}')
+    create_file_date=datetime.datetime.fromtimestamp(excel_status.st_ctime)                # Dosya oluşturulma tarihi
+    print(f'File creation date: {create_file_date}')
 
 
-#     access_file_date=datetime.datetime.fromtimestamp(excel_status.st_atime)                # Dosyaya en son erişilme tarihi
-#     print(f'File access date: {access_file_date}')
+    access_file_date=datetime.datetime.fromtimestamp(excel_status.st_atime)                # Dosyaya en son erişilme tarihi
+    print(f'File access date: {access_file_date}')
 
 
-#     modify_file_date=datetime.datetime.fromtimestamp(excel_status.st_mtime)                # Dosya değiştirlme tarihi 
-#     print(f'File modification date: {modify_file_date}')
+    modify_file_date=datetime.datetime.fromtimestamp(excel_status.st_mtime)                # Dosya değiştirlme tarihi 
+    print(f'File modification date: {modify_file_date}')
 
 
 # Tüm çalışma sayfalarını yenile
@@ -54,13 +52,14 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 while True:
     
-    df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
-    df2 = pd.read_excel("C:/Users/melih/Desktop/gold.xlsx")
+    df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx").head(5)
+    df2 = pd.read_excel("C:/Users/melih/Desktop/gold.xlsx").head(5)
     print(df)
+    dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
     print(df2)
-    print("----------------------------------------------------")
-    # dateExcel("C:/Users/melih/Desktop/exchange.xlsx")
+    dateExcel("C:/Users/melih/Desktop/gold.xlsx")
+    print("--------------------------------------------------------------------------")
     time.sleep(45)
     Workbook.Save()
     Workbook2.Save()
-    
+

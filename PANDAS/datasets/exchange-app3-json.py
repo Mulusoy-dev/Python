@@ -62,7 +62,7 @@ Workbook2 = File.Workbooks.open("C:/Users/melih/Desktop/gold.xlsx")
 
 while True:
     
-    df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx")
+    df = pd.read_excel("C:/Users/melih/Desktop/exchange.xlsx").head(5)
     js = df.to_json(orient = 'columns')
     print(df)
     print(js)
