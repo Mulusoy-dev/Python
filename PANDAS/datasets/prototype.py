@@ -15,8 +15,8 @@ mycollection = mydb["TTS-information"]                                          
 #print(mydb.list_collection_names())                             # koleksiyonları listeler                                               
 
 
-df = pd.read_excel("C:/Users/melih/Desktop/prototype.xlsx")
-#print(df)
+# df = pd.read_excel("C:/Users/melih/Desktop/prototype.xlsx")
+# #print(df)
 
 
 
@@ -46,8 +46,8 @@ modify_file_date=datetime.datetime.fromtimestamp(excel_status.st_mtime)         
 
 
 
-train_dict = df.to_dict(orient="records")
-#print(train_dict)
+# train_dict = df.to_dict(orient="records")
+# #print(train_dict)
 
 
 
@@ -57,13 +57,18 @@ train_dict = df.to_dict(orient="records")
 def insert_document(document):
     try:
         mycollection.insert_many(document)
-        return True
+        print("Connection successful")
     except Exception as e:
+        print("No connection, reconnecting...")
         print("An exception occurred :", e)
-        return False
+        main()
 
 
 def main():
+    df = pd.read_excel("C:/Users/melih/Desktop/prototype.xlsx")
+    #print(df)
+    train_dict = df.to_dict(orient="records")
+    #print(train_dict)
     
     catenary_voltage = train_dict[0]["VALUES"]
     output_ac_to_loads_1 = train_dict[1]["VALUES"]
@@ -138,11 +143,32 @@ def main():
         }
     ]
     print(insert_document(battery_data))
-main()
+
+while True:
+    main()                                                                        # Bağlantı başarılı ise
+    time.sleep(5)
 
 # my_data = mycollection.insert_many(battery_data)                                # insert_many metodu ile çoklu veri seti girişi yapılır.                                                                               # insert_one metodu ile tek bir veri seti girişi yapılır. 
 # print(my_data.inserted_ids)
 # print("Connected")
                                                                                    
- 
+# connected = True
+# while connected:
+#     try:
+#         print("Connected")
+#         main()
+#     except:
+#         connected = False
+#         print("Please wait reconnecting...")
+#         main()
+#         if connected == True:
+#             print("reconnected")
+#         else:
+#             time.sleep(2)
+
+
+
+
+
+
 
