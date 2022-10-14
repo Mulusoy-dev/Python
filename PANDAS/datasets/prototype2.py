@@ -4,6 +4,7 @@ import time, datetime
 import os
 
 
+
 # Mongo client
 myclient=pymongo.MongoClient() # SERVER bağlantısı için 
 
@@ -15,49 +16,13 @@ mycollection = mydb["TTS-information"]                                          
 #print(mydb.list_collection_names())                             # koleksiyonları listeler                                               
 
 
-# df = pd.read_excel("C:/Users/melih/Desktop/prototype.xlsx")
-# #print(df)
-
-
-
-
-
-
-# os stat bilgileri 
-excel_status = os.stat("C:/Users/melih/Desktop/prototype.xlsx")
-#print(excel_status)
-
-
-fileSize = (excel_status.st_size/1024)                                                 # Dosya Boyutu (Kb)
-#print(f'File Size: {fileSize} Kb')
-
-
-create_file_date=datetime.datetime.fromtimestamp(excel_status.st_ctime)                # Dosya oluşturulma tarihi
-#print(f'File creation date: {create_file_date}')
-
-
-access_file_date=datetime.datetime.fromtimestamp(excel_status.st_atime)                # Dosyaya en son erişilme tarihi
-#print(f'File access date: {access_file_date}')
-
-
-modify_file_date=datetime.datetime.fromtimestamp(excel_status.st_mtime)                # Dosya değiştirilme tarihi 
-#print(f'File modification date: {modify_file_date}')
-
-
-
-
-# train_dict = df.to_dict(orient="records")
-# #print(train_dict)
-
-
-
-# print(battery_data)
 
 
 def insert_document(document):
     try:
         mycollection.insert_many(document)
         print("Connection successful")
+        # print(document)
     except Exception as e:
         print("No connection, reconnecting...")
         print("An exception occurred :", e)
@@ -68,7 +33,27 @@ def main():
     df = pd.read_excel("C:/Users/melih/Desktop/prototype.xlsx")
     #print(df)
     train_dict = df.to_dict(orient="records")
-    #print(train_dict)
+    # print(train_dict)
+    # os stat bilgileri 
+    excel_status = os.stat("C:/Users/melih/Desktop/prototype.xlsx")
+    #print(excel_status)
+
+
+    fileSize = (excel_status.st_size/1024)                                                 # Dosya Boyutu (Kb)
+    #print(f'File Size: {fileSize} Kb')
+
+
+    create_file_date=datetime.datetime.fromtimestamp(excel_status.st_ctime)                # Dosya oluşturulma tarihi
+    #print(f'File creation date: {create_file_date}')
+
+
+    access_file_date=datetime.datetime.fromtimestamp(excel_status.st_atime)                # Dosyaya en son erişilme tarihi
+    #print(f'File access date: {access_file_date}')
+
+
+    modify_file_date=datetime.datetime.fromtimestamp(excel_status.st_mtime)                # Dosya değiştirilme tarihi 
+    #print(f'File modification date: {modify_file_date}')
+
     
     catenary_voltage = train_dict[0]["VALUES"]
     output_ac_to_loads_1 = train_dict[1]["VALUES"]
@@ -146,7 +131,7 @@ def main():
 
 while True:
     main()                                                                        # Bağlantı başarılı ise
-    time.sleep(5)
+    time.sleep(10)
 
 # my_data = mycollection.insert_many(battery_data)                                # insert_many metodu ile çoklu veri seti girişi yapılır.                                                                               # insert_one metodu ile tek bir veri seti girişi yapılır. 
 # print(my_data.inserted_ids)
@@ -165,10 +150,6 @@ while True:
 #             print("reconnected")
 #         else:
 #             time.sleep(2)
-
-
-
-
 
 
 
