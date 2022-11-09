@@ -5,6 +5,16 @@ import os
 import subprocess
 import win32com.client
 
+
+##########################################################################################
+
+# Mongo client
+myclient=pymongo.MongoClient() # SERVER bağlantısı için 
+
+mydb=myclient["train-db"]                                                                                                    # train-db isminde bir veritabanı arar, bulamazsa oluşturur
+mycollection = mydb["TTS-information"]                                                                                       # exchange-information isminde bir collection ekler                                                                                       
+
+
 ###########################################################################################
 
 
@@ -67,13 +77,6 @@ def same_value():
     
 
 
-
-
-# Mongo client
-myclient=pymongo.MongoClient() # SERVER bağlantısı için 
-
-mydb=myclient["train-db"]                                                                                                    # train-db isminde bir veritabanı arar, bulamazsa oluşturur
-mycollection = mydb["TTS-information"]                                                                                       # exchange-information isminde bir collection ekler                                                                                       
 
 
 
