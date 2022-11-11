@@ -21,9 +21,11 @@ mycollection = mydb["TTS-information"]                                          
 def ISAGRAF_open():
     global open_program
     prog = r"C:/Program Files/LTC/LTspiceXVII/XVIIx64.exe"
-    try:
-        # 'DEBUG' mouse clicking  
+    try: 
         open_program = subprocess.Popen([prog])
+        # 'DEBUG' mouse clicking 
+
+        
         time.sleep(2)
     except Exception as e:
         print(e)
