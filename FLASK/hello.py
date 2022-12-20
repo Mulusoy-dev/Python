@@ -7,14 +7,14 @@ def hello_world():
     return 'Hello, World!'
 
 
-@app.route("/username/<name>/1")                                            # <name> str Type
+@app.route("/username/<name>")                                            # <name> str Type
 def greet(name):
     return f"Welcome {name}!"
 
 
-@app.route("/number/<int:number>")                                         # <int> int Type
-def show_post_id(number):
-    return f"number: {number}"
+@app.route("/<name>/<int:number>")                                         # <int> int Type
+def info(name, number):
+    return f"Hello {name} you are {number} years old."
 
 
 @app.route("/bye")
