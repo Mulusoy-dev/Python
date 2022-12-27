@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Screen</title>
+    
+</head>
+<body>
+    
+    <button type="button">+ New User</button>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1">Hide Disabled User</label><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+    <button type="button" disabled >Save User</button>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="1" align="left">
+        <tr>
+            <td><button type="button"><b>ID</b></button></td>
+            <td><button type="button"><b>User Name</b></button></td>
+            <td><button type="button" style="width: 120px;"><b>Email</b></button></td>
+            <td><button type="button"><b>Enabled</b></button></td>
+        </tr>
+        <tr>
+            <td><h6><b>1</b></h6></td>
+            <td><h6><b>AdminUser</b></h6></td>
+            <td><h6><b>admin@piworks.net</b></h6></td>
+            <td><h6><b>true</b></h6></td>
+        </tr>
+        <tr>
+            <td><h6><b>2</b></h6></td>
+            <td><h6><b>Test User</b></h6></td>
+            <td><h6><b>testuser@piworks.net</b></h6></td>
+            <td><h6><b>true</b></h6></td>
+        </tr>
+    </table>
+    
+    <form align="right">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3><b>New User</b></h3>
+        <label for="fname" style="width: 120px;"><b>Username:</b></label>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="kname" style="width: 120px;"><b>Last name:</b></label>
+        <input type="text" id="kname" name="lname"><br>
+        <label for="lname" style="width: 120px;"><b>Phone:</b></label>
+        <input type="text" id="lname" name="fname"><br>
+        <label for="lname" style="width: 120px;"><b>Email:</b></label>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="rol_name" style="width: 120px;"><b>User Roles:</b></label>
+        
+            <select width=300 style="width: 170px">
+            <option value='guest'>Guest</option>
+            <option value='admin'>Admin</option>
+            <option value='superAdmin'>SuperAdmin</option>
+            <option value='' selected>Select user roles...</option>
+            </select><br>
+        
+        <label for="check_name"><b>Enabled:</b></label>
+        <input type="checkbox" id="check_name" name="fname" style="width: 120px;"><br>
+
+    </form>
+
+</body>
+</html>
