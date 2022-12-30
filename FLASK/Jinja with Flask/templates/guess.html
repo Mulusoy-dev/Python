@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>My Website</title>
 </head>
 <body>
-    <h1 style="text-align: center">Hello, Melih!</h1>
-    <a href="{{  url_for('get_blog', num=3) }}">Go To Blog</a>
+    <h1>Hey {{ person_name.title() }},</h1>
+    <br>
+    <h2>I think you are {{ gender }}</h2>
+    <br>
+    <h3>And maybe {{ age }} years old.</h3>
+
 </body>
+
+
 </html>
